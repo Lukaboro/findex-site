@@ -1,0 +1,56 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kern-satellietstrategie: een centrale kern van ETF's met satellieten errond">
+  <defs>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C2A878" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#C2A878" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#C2A878" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- subtiele baan-cirkels -->
+  <circle cx="240" cy="240" r="150" fill="none" stroke="#C2A878" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="2 6"/>
+  <circle cx="240" cy="240" r="120" fill="none" stroke="#C2A878" stroke-opacity="0.10" stroke-width="1"/>
+
+  <!-- verbindingslijnen kern -> satellieten -->
+  <g stroke="#C2A878" stroke-opacity="0.28" stroke-width="1">
+    <line x1="240" y1="240" x2="240" y2="90"/>
+    <line x1="240" y1="240" x2="370" y2="165"/>
+    <line x1="240" y1="240" x2="370" y2="315"/>
+    <line x1="240" y1="240" x2="240" y2="390"/>
+    <line x1="240" y1="240" x2="110" y2="315"/>
+    <line x1="240" y1="240" x2="110" y2="165"/>
+  </g>
+
+  <!-- kern -->
+  <circle cx="240" cy="240" r="78" fill="url(#coreGlow)"/>
+  <circle cx="240" cy="240" r="58" fill="none" stroke="#C2A878" stroke-width="1.5" stroke-opacity="0.9"/>
+  <text x="240" y="235" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-style="italic" font-size="22">Kern</text>
+  <text x="240" y="255" text-anchor="middle" fill="#C2A878" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.5" >ETF'S · WERELDWIJD</text>
+
+  <!-- satellieten -->
+  <g>
+    <!-- top -->
+    <circle cx="240" cy="90" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="240" y="94" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Thema's</text>
+
+    <!-- right top -->
+    <circle cx="370" cy="165" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="370" y="169" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Aandelen</text>
+
+    <!-- right bottom -->
+    <circle cx="370" cy="315" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="370" y="319" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Obligaties</text>
+
+    <!-- bottom -->
+    <circle cx="240" cy="390" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="240" y="394" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Goud</text>
+
+    <!-- left bottom -->
+    <circle cx="110" cy="315" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="110" y="319" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Vastgoed</text>
+
+    <!-- left top -->
+    <circle cx="110" cy="165" r="30" fill="none" stroke="#C2A878" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="110" y="169" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="0.5">Fondsen</text>
+  </g>
+</svg>
