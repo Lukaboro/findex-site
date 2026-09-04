@@ -234,7 +234,7 @@ section{ padding:6rem var(--page-pad); }
 .platform-band{ margin-top:2.5rem; padding-top:2.5rem; border-top:1px solid var(--cream-dk); }
 .platform-band > p{ max-width:70ch; font-size:0.9rem; color:var(--text-mute); margin:0 auto 2.5rem; text-align:center; }
 .platform-band > p strong{ color:var(--ink); font-weight:500; }
-.team-grid.platform{ grid-template-columns:repeat(3,1fr); }
+.team-grid.platform{ grid-template-columns:repeat(4,1fr); }
 .member.lite{ background:transparent; border-color:var(--line); }
 .member.lite .member-photo{ aspect-ratio:1/1; background:var(--cream-dk); }
 .dark .member.lite{ background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.12); position:relative; z-index:2; }
@@ -279,7 +279,7 @@ section{ padding:6rem var(--page-pad); }
 .partner-cta .cta-lead{ font-family:'Inter',sans-serif; font-style:normal; font-size:0.95rem; color:var(--text-mute); line-height:1.7; max-width:50ch; }
 
 /* ---------- Portfolio (Mijn portefeuille) ---------- */
-.depot-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:1rem; }
+.depot-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin:1rem auto 0; max-width:720px; }
 .depot-card{
   background:var(--paper); border:1px solid var(--cream-dk); padding:3rem 2rem;
   display:flex; flex-direction:column; align-items:center; gap:1.5rem; text-decoration:none;
