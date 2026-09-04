@@ -143,24 +143,19 @@ nav#nav.scrolled{
 .dark .teaser-link:hover{ color:#fff; }
 
 .split-grid{
-  display:grid; grid-template-columns:1.08fr min(42%, 440px); gap:4rem; align-items:center;
+  display:grid; grid-template-columns:1fr min(50%, 528px); gap:4rem; align-items:center;
 }
 .split-text h2{ font-size:clamp(2rem,4vw,3.2rem); margin:1.2rem 0 1.4rem; }
 .split-text p{ margin-bottom:0; line-height:1.8; }
 .split-media{
-  aspect-ratio:2/3; width:100%; max-width:440px; margin-left:auto;
+  aspect-ratio:4/5; width:100%; max-width:528px; margin-left:auto;
   overflow:hidden; background:var(--cream-dk);
 }
-.split-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+.split-media img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
 .split-text .split-trust{ margin-top:2rem; }
 .split-text .split-trust .trust-row:last-child{ margin-bottom:0; }
-.page-closer{
-  padding:0; line-height:0; overflow:hidden;
-}
-.page-closer img{
-  width:100%; height:auto; aspect-ratio:16/9; max-height:min(48vh, 440px);
-  object-fit:cover; object-position:center; display:block;
-}
+.page-hero .split-text h1{ margin:1.2rem 0 1.4rem; max-width:16ch; }
+.page-hero .split-text .lead{ max-width:42ch; }
 .media-placeholder{
   aspect-ratio:4/3; width:100%;
   background:var(--cream-dk); display:flex; align-items:center; justify-content:center;
@@ -204,7 +199,6 @@ nav#nav.scrolled{
 
 /* ---------- Sectie-basis ---------- */
 section{ padding:6rem var(--page-pad); }
-section.page-closer{ padding:0; }
 .wrap{ max-width:var(--page-max); margin:0 auto; width:100%; }
 .section-head{ max-width:72ch; margin-bottom:3rem; }
 .section-head h2{ font-size:clamp(2rem,4vw,3.2rem); margin:1.2rem 0 1.4rem; }
@@ -366,10 +360,9 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
   }
   .hero{ padding:7rem 1.4rem 4rem; }
   .split-grid{ grid-template-columns:1fr; gap:2rem; }
-  .split-grid .split-media{ order:-1; max-width:min(78vw,320px); margin-left:auto; margin-right:auto; }
+  .split-grid .split-media{ order:-1; max-width:min(80vw,384px); margin-left:auto; margin-right:auto; }
   .page-hero{ padding:8rem 1.4rem 3.5rem; }
   section{ padding:3.5rem 1.4rem; }
-  section.page-closer{ padding:0; }
   .story-grid, .beheer-grid, .contact-grid{ grid-template-columns:1fr; gap:2.5rem; }
   .team-grid, .team-grid.platform{ grid-template-columns:1fr 1fr; }
   .partner-grid{ grid-template-columns:1fr; gap:0; }
