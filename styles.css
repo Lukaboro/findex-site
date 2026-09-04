@@ -220,7 +220,7 @@ section{ padding:6rem var(--page-pad); }
 .member{ background:var(--paper); border:1px solid var(--cream-dk); transition:transform .3s, box-shadow .3s; }
 .member:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -24px rgba(22,38,59,0.35); }
 .member-photo{ aspect-ratio:4/5; background:linear-gradient(160deg,var(--cream) 0%,var(--cream-dk) 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.member-photo img{ width:100%; height:100%; object-fit:cover; }
+.member-photo img{ width:100%; height:100%; object-fit:cover; object-position:top; }
 .member-photo .ph{ font-family:'Fraunces',serif; font-style:italic; color:var(--brass); font-size:0.8rem; letter-spacing:0.1em; }
 .member-body{ padding:1.6rem 1.5rem 1.8rem; }
 .member-name{ font-family:'Fraunces',serif; font-size:1.35rem; color:var(--ink); margin-bottom:0.25rem; }
