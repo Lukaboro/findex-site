@@ -11,10 +11,29 @@ if (nav) {
 // Mobiel menu
 const toggle = document.getElementById('navToggle');
 const links = document.querySelector('.nav-links');
+
+function setMenuOpen(open) {
+  if (!toggle || !links) return;
+  links.classList.toggle('is-open', open);
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+}
+
 if (toggle && links) {
   toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    setMenuOpen(!links.classList.contains('is-open'));
+  });
+
+  links.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenuOpen(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) setMenuOpen(false);
   });
 }
 
