@@ -246,8 +246,9 @@ section{ padding:6rem var(--page-pad); }
 .trust-desc{ font-size:0.9rem; color:var(--text-mute); line-height:1.65; }
 
 /* ---------- Team ---------- */
-.team-intro{ display:flex; justify-content:space-between; align-items:flex-end; gap:3rem; margin-bottom:3.5rem; flex-wrap:wrap; }
-.team-note{ max-width:34ch; font-size:0.9rem; color:var(--text-mute); }
+.team-intro{ max-width:var(--read-max); margin-bottom:3.5rem; }
+.team-intro h2{ margin:1.2rem 0 1.2rem; }
+.team-note{ max-width:none; font-size:1rem; line-height:1.8; color:var(--text-mute); }
 .team-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
 .member{ background:var(--paper); border:1px solid var(--cream-dk); transition:transform .3s, box-shadow .3s; }
 .member:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -24px rgba(22,38,59,0.35); }
@@ -303,9 +304,15 @@ section{ padding:6rem var(--page-pad); }
 
 /* ---------- Samenwerken ---------- */
 .partner-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem 3rem; margin-top:1rem; }
+.partner-grid.cols-3{ grid-template-columns:repeat(3,1fr); }
 .partner-item{ padding:1.8rem 0; border-top:1px solid var(--cream-dk); }
 .partner-item h3{ font-size:1.25rem; margin-bottom:0.6rem; }
 .partner-item p{ font-size:0.9rem; color:var(--text-mute); line-height:1.7; }
+.feature-triad{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem 2.5rem;
+  margin-top:3rem; position:relative; z-index:2;
+}
+.feature-triad-item{ padding-top:1.2rem; border-top:1px solid var(--line); }
 .partner-cta{ margin-top:3.5rem; padding:2.5rem 3rem; background:var(--cream); border-left:2px solid var(--brass); display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap; }
 .partner-cta.on-cream{ background:var(--paper); }
 .partner-cta h3{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:400; margin-bottom:0.6rem; color:var(--ink); }
@@ -337,7 +344,11 @@ section{ padding:6rem var(--page-pad); }
 .portfolio-note{ margin-top:3rem; font-size:0.9rem; color:var(--text-mute); max-width:var(--read-max); }
 
 /* ---------- Contact ---------- */
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+.contact-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,5rem);
+  align-items:stretch;
+}
+.contact-main{ display:flex; flex-direction:column; gap:2.5rem; min-width:0; }
 .contact-form{ display:flex; flex-direction:column; gap:1.2rem; }
 .fg{ display:flex; flex-direction:column; gap:0.45rem; }
 label{ font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mute); font-weight:500; }
@@ -351,6 +362,15 @@ textarea{ resize:vertical; min-height:130px; }
 .ci-val{ color:var(--ink); font-size:0.95rem; }
 .ci-val a{ color:var(--ink); text-decoration:none; }
 .ci-val a:hover{ color:var(--brass); }
+.contact-media{
+  position:relative; min-height:100%; overflow:hidden;
+  background:var(--cream-dk);
+}
+.contact-media img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center; display:block;
+}
 .map-note{ margin-top:2rem; font-size:0.82rem; color:var(--text-mute); font-style:italic; }
 
 /* ---------- Juridisch / tekstpagina ---------- */
@@ -478,6 +498,7 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
   .page-hero{ padding:8rem 1.4rem 3.5rem; }
   section{ padding:3.5rem 1.4rem; }
   .story-grid, .beheer-grid, .contact-grid{ grid-template-columns:1fr; gap:2.5rem; }
+  .contact-media{ display:none; }
   .aanpak-head{ margin-bottom:2.5rem; }
   .aanpak-body{ grid-template-columns:1fr; gap:2rem; }
   .aanpak-visual{ max-width:min(92vw,420px); margin:0 auto; }
@@ -488,7 +509,9 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
     position:static; transform:none; max-width:none;
   }
   .team-grid, .team-grid.platform{ grid-template-columns:1fr 1fr; }
-  .partner-grid{ grid-template-columns:1fr; gap:0; }
+  .partner-grid,
+  .partner-grid.cols-3,
+  .feature-triad{ grid-template-columns:1fr; gap:0; }
   .depot-grid{ grid-template-columns:1fr; }
   .footer-inner{ flex-direction:column; align-items:flex-start; }
 }

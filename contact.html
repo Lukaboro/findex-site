@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=34">
+<link rel="stylesheet" href="styles.css?v=37">
 <style>
   nav#nav{background:#F8F5EF!important;color:#16263B!important;border-bottom:1px solid rgba(22,38,59,.1)!important}
   nav#nav .nav-links a,nav#nav .nav-links .nav-portfolio{color:#16263B!important}nav#nav .nav-links .nav-mobile-only a{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF}
@@ -32,34 +32,30 @@
 
 <header class="page-hero">
   <div class="wrap">
-    <div class="split-grid">
-      <div class="split-text reveal">
-        <span class="eyebrow">Contact</span>
-        <h1>Maak <em>kennis.</em></h1>
-        <p class="lead">Of u nu particulier, ondernemer of professionele partner bent — een eerste gesprek is altijd vrijblijvend. Laat hieronder iets na, dan nemen we binnen één werkdag contact met u op.</p>
-      </div>
-      <div class="split-media reveal">
-        <img src="assets/contact-beeld.jpg" alt="Findex Vermogensbeheer">
-      </div>
-    </div>
+    <span class="eyebrow reveal">Contact</span>
+    <h1 class="reveal">Maak <em>kennis.</em></h1>
+    <p class="lead reveal">Een gesprek is vrijblijvend. Laat hieronder iets na, dan nemen we binnen één werkdag contact met u op.</p>
   </div>
 </header>
 
 <section class="alt-paper">
   <div class="wrap">
     <div class="contact-grid">
-      <div class="reveal">
+      <div class="contact-main reveal">
         <form class="contact-form" onsubmit="return false;">
           <div class="fg"><label for="naam">Naam</label><input type="text" id="naam" placeholder="Voor- en achternaam"></div>
           <div class="fg"><label for="email">E-mailadres</label><input type="email" id="email" placeholder="naam@voorbeeld.be"></div>
           <div class="fg"><label for="bericht">Bericht</label><textarea id="bericht" placeholder="Vertel kort over uw situatie of vraag…"></textarea></div>
           <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Verzenden</button>
         </form>
+        <div class="contact-info">
+          <h3>Findex Vermogensbeheer België</h3>
+          <div class="ci-row"><span class="ci-label">E-mail</span><span class="ci-val"><a href="mailto:info@findexvb.be">info@findexvb.be</a></span></div>
+          <div class="ci-row"><span class="ci-label">Antwoord</span><span class="ci-val">Binnen één werkdag</span></div>
+        </div>
       </div>
-      <div class="contact-info reveal">
-        <h3>Findex Vermogensbeheer België</h3>
-        <div class="ci-row"><span class="ci-label">E-mail</span><span class="ci-val"><a href="mailto:info@findexvb.be">info@findexvb.be</a></span></div>
-        <div class="ci-row"><span class="ci-label">Antwoord</span><span class="ci-val">Binnen één werkdag</span></div>
+      <div class="contact-media reveal">
+        <img src="assets/contact-beeld.jpg" alt="Findex Vermogensbeheer">
       </div>
     </div>
   </div>
