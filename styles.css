@@ -357,8 +357,20 @@ textarea{ resize:vertical; min-height:130px; }
 .legal-body{ max-width:var(--read-max); }
 .legal-body h2{ font-size:1.6rem; margin:2.5rem 0 1rem; }
 .legal-body h2:first-child{ margin-top:0; }
+.legal-body h3{
+  font-family:'Inter',sans-serif; font-size:1.05rem; font-weight:500;
+  color:var(--ink); margin:1.6rem 0 0.7rem; letter-spacing:0;
+}
 .legal-body p{ margin-bottom:1.1rem; font-size:1rem; color:var(--text); line-height:1.8; }
-.legal-body .placeholder{ color:var(--text-mute); font-style:italic; }
+.legal-body .placeholder{ color:var(--brass); font-style:italic; font-weight:500; }
+.legal-body ul, .legal-body ol{
+  margin:0 0 1.1rem; padding-left:1.25rem;
+  font-size:1rem; color:var(--text); line-height:1.8;
+}
+.legal-body li{ margin-bottom:0.4rem; }
+.legal-body li::marker{ color:var(--brass); }
+.legal-links{ display:flex; flex-direction:column; gap:0.9rem; margin-top:1.2rem; }
+.legal-links a{ font-size:1rem; }
 .doc-list{
   margin:0 0 0.5rem; padding-left:1.25rem;
   font-size:1rem; color:var(--text); line-height:1.8;
