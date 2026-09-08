@@ -20,6 +20,7 @@
   --line:rgba(22,38,59,0.10);
   --page-max:1600px;
   --page-pad:clamp(1.4rem,4vw,4.5rem);
+  --read-max:850px; /* leesbreedte lopende tekst (~12% boven ~760px / 72ch) */
 }
 
 html{ scroll-behavior:smooth; }
@@ -117,7 +118,7 @@ nav#nav.scrolled{
 }
 .hero-inner{ max-width:var(--page-max); margin:0 auto; width:100%; }
 .hero h1{ font-size:clamp(2.8rem,6vw,5.2rem); margin:1.8rem 0 2rem; max-width:22ch; }
-.hero-sub{ max-width:62ch; font-size:1.1rem; line-height:1.75; margin-bottom:3rem; }
+.hero-sub{ max-width:var(--read-max); font-size:1.1rem; line-height:1.75; margin-bottom:3rem; }
 .hero-actions{ display:flex; gap:1.1rem; flex-wrap:wrap; align-items:center; }
 .btn{
   font-family:'Inter',sans-serif; font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase;
@@ -167,15 +168,32 @@ nav#nav.scrolled{
 .media-placeholder span{
   font-family:'Fraunces',serif; font-style:italic; color:var(--text-mute); font-size:0.9rem; letter-spacing:0.04em;
 }
-.beheer-visual{
-  display:flex; align-items:center; justify-content:center;
-  width:100%; position:relative; z-index:2;
+.aanpak{ position:relative; z-index:2; }
+.aanpak-head{ max-width:var(--read-max); margin-bottom:3.5rem; }
+.aanpak-head h2{ font-size:clamp(2rem,4vw,3.2rem); margin:1.2rem 0 1.4rem; }
+.aanpak-head p{ font-size:1rem; line-height:1.8; color:rgba(255,255,255,0.7); }
+.aanpak-body{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  column-gap:clamp(1.5rem,4vw,4rem);
+  align-items:stretch;
 }
-.beheer-visual img{
-  width:100%; max-width:420px; height:auto; display:block; margin:0 auto;
+.aanpak-visual{ display:flex; align-items:center; justify-content:center; min-width:0; }
+.aanpak-visual img{
+  width:100%; max-width:none; height:auto; display:block;
 }
-.beheer-text .beheer-features{ margin-top:1.6rem; margin-bottom:1.8rem; }
-.beheer-text .teaser-link{ display:inline-block; }
+.aanpak-layers{ position:relative; align-self:stretch; min-height:100%; }
+.aanpak-layer{
+  position:absolute; left:0; right:0;
+  transform:translateY(-50%);
+  max-width:36rem;
+}
+/* Circle centers in sneeuwman-final.svg (viewBox 480): 84.6 / 216.69 / 372.09 */
+.aanpak-layer--overtuiging{ top:17.625%; }
+.aanpak-layer--verfijning{ top:45.144%; }
+.aanpak-layer--basis{ top:77.519%; }
+.aanpak-cta{ margin-top:2.5rem; }
+.aanpak-cta .teaser-link{ display:inline-block; }
 .dark .media-placeholder{
   background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
 }
@@ -203,12 +221,12 @@ nav#nav.scrolled{
 }
 .page-hero .wrap{ max-width:var(--page-max); margin:0 auto; }
 .page-hero h1{ font-size:clamp(2.4rem,5vw,4rem); margin:1.4rem 0 1.5rem; max-width:24ch; }
-.page-hero .lead{ max-width:68ch; }
+.page-hero .lead{ max-width:var(--read-max); }
 
 /* ---------- Sectie-basis ---------- */
 section{ padding:6rem var(--page-pad); }
 .wrap{ max-width:var(--page-max); margin:0 auto; width:100%; }
-.section-head{ max-width:72ch; margin-bottom:3rem; }
+.section-head{ max-width:var(--read-max); margin-bottom:3rem; }
 .section-head h2{ font-size:clamp(2rem,4vw,3.2rem); margin:1.2rem 0 1.4rem; }
 .section-head p{ font-size:1rem; line-height:1.8; color:var(--text-mute); }
 .section-head .lead{ font-size:1.1rem; }
@@ -247,7 +265,7 @@ section{ padding:6rem var(--page-pad); }
 .member-contact a:hover{ color:var(--ink); border-bottom-color:var(--brass); }
 
 .platform-band{ margin-top:2.5rem; padding-top:2.5rem; border-top:1px solid var(--cream-dk); }
-.platform-band > p{ max-width:70ch; font-size:0.9rem; color:var(--text-mute); margin:0 auto 2.5rem; text-align:center; }
+.platform-band > p{ max-width:var(--read-max); font-size:0.9rem; color:var(--text-mute); margin:0 auto 2.5rem; text-align:center; }
 .platform-band > p strong{ color:var(--ink); font-weight:500; }
 .team-grid.platform{ grid-template-columns:repeat(4,1fr); }
 .member.lite{ background:transparent; border-color:var(--line); }
@@ -266,8 +284,9 @@ section{ padding:6rem var(--page-pad); }
 .dark h2{ color:#fff; }
 .dark h2 em{ color:var(--brass-lt); }
 .beheer-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; position:relative; z-index:2; }
+.beheer-text{ position:relative; z-index:2; }
 .beheer-text p{ margin-bottom:1.3rem; font-size:1rem; line-height:1.8; }
-.beheer-features{ margin-top:2.5rem; display:flex; flex-direction:column; gap:1.6rem; }
+.beheer-features{ margin-top:2.5rem; display:flex; flex-direction:column; gap:1.6rem; position:relative; z-index:2; }
 .bf-row{ display:flex; gap:1.2rem; align-items:flex-start; }
 .bf-icon{ width:2.6rem; height:2.6rem; flex-shrink:0; border:1px solid rgba(194,168,120,0.4); color:var(--brass-lt); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-style:italic; }
 .bf-title{ color:#fff; font-weight:500; font-size:0.95rem; margin-bottom:0.25rem; }
@@ -291,7 +310,7 @@ section{ padding:6rem var(--page-pad); }
 .partner-cta.on-cream{ background:var(--paper); }
 .partner-cta h3{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:400; margin-bottom:0.6rem; color:var(--ink); }
 .partner-cta p{ font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:var(--ink); font-weight:300; max-width:40ch; }
-.partner-cta .cta-lead{ font-family:'Inter',sans-serif; font-style:normal; font-size:0.9rem; color:var(--text-mute); line-height:1.7; max-width:62ch; font-weight:300; }
+.partner-cta .cta-lead{ font-family:'Inter',sans-serif; font-style:normal; font-size:0.9rem; color:var(--text-mute); line-height:1.7; max-width:var(--read-max); font-weight:300; }
 
 /* ---------- Portfolio (Mijn portefeuille) ---------- */
 .depot-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin:1rem auto 0; max-width:720px; }
@@ -315,7 +334,7 @@ section{ padding:6rem var(--page-pad); }
 .depot-name{ font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ink); }
 .depot-sub{ font-size:0.82rem; color:var(--text-mute); letter-spacing:0.04em; }
 .depot-action{ font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--brass); font-weight:500; margin-top:0.5rem; }
-.portfolio-note{ margin-top:3rem; font-size:0.9rem; color:var(--text-mute); max-width:60ch; }
+.portfolio-note{ margin-top:3rem; font-size:0.9rem; color:var(--text-mute); max-width:var(--read-max); }
 
 /* ---------- Contact ---------- */
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
@@ -335,7 +354,7 @@ textarea{ resize:vertical; min-height:130px; }
 .map-note{ margin-top:2rem; font-size:0.82rem; color:var(--text-mute); font-style:italic; }
 
 /* ---------- Juridisch / tekstpagina ---------- */
-.legal-body{ max-width:760px; }
+.legal-body{ max-width:var(--read-max); }
 .legal-body h2{ font-size:1.6rem; margin:2.5rem 0 1rem; }
 .legal-body h2:first-child{ margin-top:0; }
 .legal-body p{ margin-bottom:1.1rem; font-size:1rem; color:var(--text); line-height:1.8; }
@@ -447,6 +466,15 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
   .page-hero{ padding:8rem 1.4rem 3.5rem; }
   section{ padding:3.5rem 1.4rem; }
   .story-grid, .beheer-grid, .contact-grid{ grid-template-columns:1fr; gap:2.5rem; }
+  .aanpak-head{ margin-bottom:2.5rem; }
+  .aanpak-body{ grid-template-columns:1fr; gap:2rem; }
+  .aanpak-visual{ max-width:min(92vw,420px); margin:0 auto; }
+  .aanpak-layers{
+    position:static; display:flex; flex-direction:column; gap:1.6rem; min-height:0;
+  }
+  .aanpak-layer{
+    position:static; transform:none; max-width:none;
+  }
   .team-grid, .team-grid.platform{ grid-template-columns:1fr 1fr; }
   .partner-grid{ grid-template-columns:1fr; gap:0; }
   .depot-grid{ grid-template-columns:1fr; }
