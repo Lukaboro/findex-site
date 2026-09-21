@@ -179,8 +179,11 @@ nav#nav.scrolled{
   align-items:stretch;
 }
 .aanpak-visual{ display:flex; align-items:center; justify-content:center; min-width:0; }
+.aanpak-visual picture{
+  width:100%; max-width:100%; display:block;
+}
 .aanpak-visual img{
-  width:100%; max-width:none; height:auto; display:block;
+  width:100%; max-width:100%; height:auto; display:block;
 }
 .aanpak-layers{ position:relative; align-self:stretch; min-height:100%; }
 .aanpak-layer{
@@ -188,7 +191,6 @@ nav#nav.scrolled{
   transform:translateY(-50%);
   max-width:36rem;
 }
-/* Circle centers in sneeuwman-final.svg (viewBox 480): 84.6 / 216.69 / 372.09 */
 .aanpak-layer--overtuiging{ top:17.625%; }
 .aanpak-layer--verfijning{ top:45.144%; }
 .aanpak-layer--basis{ top:77.519%; }
@@ -416,9 +418,9 @@ textarea{ resize:vertical; min-height:130px; }
 /* ---------- Footer ---------- */
 footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(--page-pad); }
 .footer-inner{ max-width:var(--page-max); margin:0 auto; display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; flex-wrap:wrap; }
+.footer-logo{ max-width:100%; }
 .footer-logo img{
-  max-height:110px;
-  height:auto;
+  height:50px;
   width:auto;
   max-width:100%;
   display:block;
@@ -533,9 +535,9 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
   .contact-media{ display:none; }
   .aanpak-head{ margin-bottom:2.5rem; }
   .aanpak-body{ grid-template-columns:1fr; gap:2rem; }
-  .aanpak-visual{ max-width:min(92vw,420px); margin:0 auto; }
+  .aanpak-visual{ max-width:100%; width:100%; margin:0; order:2; }
   .aanpak-layers{
-    position:static; display:flex; flex-direction:column; gap:1.6rem; min-height:0;
+    position:static; display:flex; flex-direction:column; gap:1.6rem; min-height:0; order:1;
   }
   .aanpak-layer{
     position:static; transform:none; max-width:none;
@@ -546,6 +548,7 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
   .feature-triad{ grid-template-columns:1fr; gap:0; }
   .depot-grid{ grid-template-columns:1fr; }
   .footer-inner{ flex-direction:column; align-items:flex-start; }
+  .footer-logo img{ height:46px; width:auto; max-width:100%; }
 }
 @media(max-width:540px){
   .team-grid, .team-grid.platform{ grid-template-columns:1fr; }
