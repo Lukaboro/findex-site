@@ -553,3 +553,93 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
 @media(max-width:540px){
   .team-grid, .team-grid.platform{ grid-template-columns:1fr; }
 }
+
+/* ---------- Aanpak merged (Vermogensbeheer) ---------- */
+.aanpak-merged{
+  --aanpak-gap:clamp(1.5rem,4vw,4rem);
+  column-gap:var(--aanpak-gap);
+}
+.aanpak-merged .aanpak-visual{
+  position:relative; display:block; overflow:visible;
+}
+.aanpak-merged .aanpak-visual img{
+  width:100%; max-width:100%; height:auto; display:block;
+}
+.aanpak-merged .aanpak-layers{
+  position:relative; align-self:stretch; min-height:100%;
+}
+.aanpak-merged .aanpak-layer{
+  position:absolute; left:0; right:0;
+  transform:translateY(-50%);
+  max-width:36rem;
+}
+.aanpak-merged .aanpak-layer--overtuiging{ top:17.5%; }
+.aanpak-merged .aanpak-layer--verfijning{ top:51.5%; }
+.aanpak-merged .aanpak-layer--basis{ top:84%; }
+.aanpak-merged .aanpak-layer-name{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:30px;
+  color:var(--brass-lt);
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+.aanpak-merged .aanpak-layer-kicker{
+  font-size:0.7rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--brass-lt);
+  font-weight:500;
+  margin:0.3rem 0 0.65rem;
+}
+.aanpak-lead{
+  position:absolute;
+  height:1px;
+  background:rgba(194,168,120,0.6);
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.aanpak-lead::before{
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--brass-lt);
+  transform:translate(-50%,-50%);
+}
+.aanpak-lead--iii{ top:17.5%; left:56.16%; right:calc(-1 * var(--aanpak-gap)); }
+.aanpak-lead--ii{ top:51.5%; left:72.6%; right:calc(-1 * var(--aanpak-gap)); }
+.aanpak-lead--i{ top:84%; left:88.3%; right:calc(-1 * var(--aanpak-gap)); }
+
+@media(max-width:900px){
+  .aanpak-merged{
+    grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  }
+  .aanpak-merged .aanpak-visual{
+    max-width:none; width:100%; margin:0; order:0;
+  }
+  .aanpak-merged .aanpak-layers{
+    position:relative; display:block; flex-direction:unset; gap:unset; min-height:100%; order:0;
+  }
+  .aanpak-merged .aanpak-layer{
+    position:absolute; transform:translateY(-50%); max-width:36rem;
+  }
+}
+@media(max-width:720px){
+  .aanpak-merged{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+  .aanpak-merged .aanpak-visual{
+    max-width:100%; width:100%; margin:0; order:0;
+  }
+  .aanpak-merged .aanpak-layers{
+    position:static; display:flex; flex-direction:column; gap:1.6rem; min-height:0; order:0;
+  }
+  .aanpak-merged .aanpak-layer{
+    position:static; transform:none; max-width:none;
+  }
+  .aanpak-lead{ display:none; }
+}
