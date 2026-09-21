@@ -242,8 +242,8 @@ section{ padding:6rem var(--page-pad); }
 .trust-row{ display:flex; gap:0.9rem; padding:1.1rem 0; border-bottom:1px solid var(--line); align-items:flex-start; }
 .trust-row:last-child{ border-bottom:none; }
 .trust-mark{ color:var(--brass); font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; line-height:1; flex-shrink:0; }
-.trust-title{ font-weight:500; color:var(--ink); font-size:0.92rem; margin-bottom:0.2rem; }
-.trust-desc{ font-size:0.9rem; color:var(--text-mute); line-height:1.65; }
+.trust-title{ font-weight:600; color:var(--ink); font-size:1.05rem; margin-bottom:0.35rem; }
+.trust-desc{ font-size:1rem; color:var(--text-mute); line-height:1.8; }
 
 /* ---------- Team ---------- */
 .team-intro{ max-width:var(--read-max); margin-bottom:3.5rem; }
@@ -355,6 +355,8 @@ section{ padding:6rem var(--page-pad); }
 .contact-form{ display:flex; flex-direction:column; gap:1.2rem; }
 .contact-form .btn{ align-self:flex-start; }
 .fg{ display:flex; flex-direction:column; gap:0.45rem; }
+.required{ color:var(--brass); }
+.form-note{ font-size:0.78rem; color:var(--text-mute); margin:0; }
 label{ font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mute); font-weight:500; }
 input,textarea{ padding:0.9rem 1rem; border:1px solid var(--cream-dk); background:var(--paper); font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--ink); outline:none; transition:border-color .2s; }
 input:focus,textarea:focus{ border-color:var(--brass); }
@@ -386,6 +388,13 @@ textarea{ resize:vertical; min-height:130px; }
   color:var(--ink); margin:1.6rem 0 0.7rem; letter-spacing:0;
 }
 .legal-body p{ margin-bottom:1.1rem; font-size:1rem; color:var(--text); line-height:1.8; }
+.legal-body a:not(.teaser-link):not(.btn){
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid rgba(168,137,92,0.45);
+  transition:color .2s, border-color .2s;
+}
+.legal-body a:not(.teaser-link):not(.btn):hover{ color:var(--brass); border-bottom-color:var(--brass); }
 .legal-body .placeholder{ color:var(--brass); font-style:italic; font-weight:500; }
 .legal-body ul, .legal-body ol{
   margin:0 0 1.1rem; padding-left:1.25rem;
@@ -407,11 +416,18 @@ textarea{ resize:vertical; min-height:130px; }
 /* ---------- Footer ---------- */
 footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(--page-pad); }
 .footer-inner{ max-width:var(--page-max); margin:0 auto; display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; flex-wrap:wrap; }
-.footer-logo img{ height:56px; width:auto; display:block; }
+.footer-logo img{
+  max-height:110px;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  display:block;
+  object-fit:contain;
+}
 .footer-nav{ display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:1rem; }
 .footer-nav a{ color:rgba(255,255,255,0.65); text-decoration:none; font-size:0.8rem; letter-spacing:0.06em; transition:color .2s; }
 .footer-nav a:hover{ color:var(--brass-lt); }
-.footer-legal{ font-size:0.78rem; line-height:1.7; max-width:48ch; }
+.footer-legal{ font-size:0.78rem; line-height:1.7; max-width:62ch; }
 .footer-legal a{ color:rgba(255,255,255,0.45); text-decoration:none; border-bottom:1px solid transparent; transition:color .2s, border-color .2s; }
 .footer-legal a:hover{ color:var(--brass-lt); border-bottom-color:rgba(194,168,120,0.35); }
 .footer-credit{
