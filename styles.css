@@ -652,4 +652,21 @@ footer{ background:var(--ink); color:rgba(255,255,255,0.5); padding:3.5rem var(-
     position:static; transform:none; max-width:none;
   }
   .aanpak-lead{ display:none; }
+  .aanpak-merged .aanpak-layer-name{
+    display:flex;
+    align-items:baseline;
+    gap:0.5rem;
+  }
+  .aanpak-merged .aanpak-layer-name::before{
+    font-family:'Fraunces',serif;
+    font-style:normal;
+    font-weight:300;
+    font-size:1.15rem;
+    color:var(--brass-lt);
+    letter-spacing:0.12em;
+    line-height:1;
+  }
+  .aanpak-merged .aanpak-layer--overtuiging .aanpak-layer-name::before{ content:"III"; }
+  .aanpak-merged .aanpak-layer--verfijning .aanpak-layer-name::before{ content:"II"; }
+  .aanpak-merged .aanpak-layer--basis .aanpak-layer-name::before{ content:"I"; }
 }
