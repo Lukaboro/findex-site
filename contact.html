@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=49">
+<link rel="stylesheet" href="styles.css?v=57">
 <link rel="icon" type="image/png" href="assets/icoon_website.png">
 <style>
   nav#nav{background:var(--cream)!important;color:var(--ink)!important;border-bottom:1px solid var(--line)!important}
@@ -35,7 +35,14 @@
   <div class="wrap">
     <span class="eyebrow reveal">Contact</span>
     <h1 class="reveal">Maak <em>kennis.</em></h1>
-    <p class="lead reveal">Een gesprek is vrijblijvend. Laat hieronder iets na, dan nemen we binnen één werkdag contact met u op.</p>
+    <p class="lead reveal">Of u nu particulier, ondernemer of professionele partner bent, u kunt ons contacteren voor:</p>
+    <ul class="contact-points reveal">
+      <li>een vrijblijvende kennismaking</li>
+      <li>een grondige evaluatie van uw huidige vermogenssituatie</li>
+      <li>een kosteloze doorlichting van uw huidige portefeuille</li>
+      <li>een blik op onze rendementen</li>
+    </ul>
+    <p class="contact-promise reveal">Laat hieronder uw gegevens na, dan nemen we <strong>binnen één werkdag</strong> contact met u op.</p>
   </div>
 </header>
 
@@ -47,11 +54,12 @@
           <input type="hidden" name="access_key" value="bff4ed40-5fdb-49e5-97c0-71d35f4a5feb">
           <input type="hidden" name="subject" value="Nieuw bericht via de Findex-website">
           <input type="hidden" name="from_name" value="Website Findex">
-          <input type="hidden" name="redirect" value="https://findex-site.deknock.workers.dev/bedankt.html">
+          <input type="hidden" name="redirect" value="https://findexvb.be/bedankt.html">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none">
           <div class="fg"><label for="naam">Naam <span class="required">*</span></label><input type="text" id="naam" name="name" placeholder="Voor- en achternaam" required></div>
           <div class="fg"><label for="email">E-mail <span class="required">*</span></label><input type="email" id="email" name="email" placeholder="naam@voorbeeld.be" required></div>
           <div class="fg"><label for="gsm">Gsm</label><input type="tel" id="gsm" name="gsm" autocomplete="tel"></div>
+          <div class="fg"><label for="woonplaats">Woonplaats</label><input type="text" id="woonplaats" name="woonplaats" autocomplete="address-level2"></div>
           <div class="fg"><label for="bericht">Bericht</label><textarea id="bericht" name="message" placeholder="Vertel kort over uw situatie of vraag…"></textarea></div>
           <p class="form-note"><span class="required">*</span> verplicht veld</p>
           <button type="submit" class="btn btn-primary">Verzenden</button>
